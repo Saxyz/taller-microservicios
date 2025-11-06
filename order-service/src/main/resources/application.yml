@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: order-service
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: user
+    password: pass
+
+  cloud:
+    stream:
+      bindings:
+        reserveOrder-out-0:
+          destination: marketplace.topic
+          content-type: application/json
