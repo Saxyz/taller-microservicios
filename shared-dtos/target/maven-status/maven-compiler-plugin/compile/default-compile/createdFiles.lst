@@ -1,2 +1,4 @@
 com\unimag\shared\dtos\events\InventoryReservedEvent.class
+com\unimag\shared\dtos\commands\ProcessPaymentCommand.class
 com\unimag\shared\dtos\commands\ReserveInventoryCommand.class
+com\unimag\shared\dtos\events\InventoryRejectedEvent.class
