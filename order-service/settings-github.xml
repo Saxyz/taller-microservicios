@@ -18,6 +18,6 @@
         </profile>
     </profiles>
     <activeProfiles>
-        <activeProfile>github</activeProfile>
+        <activeProfile>github-packages</activeProfile>
     </activeProfiles>
 </settings>

@@ -1,0 +1,7 @@
+# Ignorar todos los settings que contengan credenciales de GitHub
+**/settings-github.xml
+
+# Ignorar reglas específicas por servicio (opcional, redundante con la anterior)
+/inventory-service/settings-github.xml
+/order-service/settings-github.xml
+/payment-service/settings-github.xml
