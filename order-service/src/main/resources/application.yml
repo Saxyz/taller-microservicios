@@ -27,3 +27,19 @@ spring:
           destination: marketplace.topic
           content-type: application/json
           group: order.inventory_rejected.queue  # Importante para consumers
+      rabbit:
+        bindings:
+          # Outs
+          reserveOrder-out-0:
+            producer:
+              routingKeyExpression: "headers['routingKey'] ?: 'order.inventory_reserved'"
+          processPayment-out-0:
+            producer:
+              routingKeyExpression: "headers['routingKey'] ?: 'order.process_payment'"
+          # Ins
+          inventoryReservedEventConsumer-in-0:
+            consumer:
+              bindingRoutingKey: "order.inventory_updated.#"
+          inventoryRejectedEventConsumer-in-0:
+            consumer:
+              bindingRoutingKey: "order.inventory_rejected.#"

@@ -8,10 +8,27 @@ spring:
     password: pass
   cloud:
     function:
-      definition: reserveInventory   # nombre del bean Consumer<...>
+      definition: reserveInventory
     stream:
       bindings:
-        reserve-in-0:
+        reserveInventory-in-0:
           destination: marketplace.topic
           group: inventory.reserve_order.queue
           content-type: application/json
+        orderInProgress-out-0:
+          destination: marketplace.topic
+          content-type: application/json
+        orderRejected-out-0:
+          destination: marketplace.topic
+          content-type: application/json
+      rabbit:
+        bindings:
+          reserveInventory-in-0:
+            consumer:
+              bindingRoutingKey: "order.inventory_reserved.#"
+          orderInProgress-out-0:
+            producer:
+              routingKeyExpression: "headers['routingKey'] ?: 'order.inventory_updated'"
+          orderRejected-out-0:
+            producer:
+              routingKeyExpression: "headers['routingKey'] ?: 'order.inventory_rejected'"

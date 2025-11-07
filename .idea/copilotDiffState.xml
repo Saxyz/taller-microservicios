@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CopilotDiffPersistence">
+    <option name="pendingDiffs">
+      <map>
+        <entry key="$PROJECT_DIR$/inventory-service/src/main/resources/application.yml">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="$PROJECT_DIR$/inventory-service/src/main/resources/application.yml" />
+              <option name="originalContent" value="spring:&#10;  application:&#10;    name: inventory-service&#10;  rabbitmq:&#10;    host: localhost&#10;    port: 5672&#10;    username: user&#10;    password: pass&#10;  cloud:&#10;    function:&#10;      definition: reserveInventory   # nombre del bean Consumer&lt;...&gt;&#10;    stream:&#10;      bindings:&#10;        reserveInventory-in-0:&#10;          destination: marketplace.topic&#10;          group: inventory.reserve_order.queue&#10;          content-type: application/json&#10;        orderInProgress-out-0:&#10;          destination: marketplace.topic&#10;          content-type: application/json&#10;        orderRejected-out-0:&#10;          destination: marketplace.topic&#10;          content-type: application/json&#10;      rabbit:&#10;        bindings:&#10;          reserveInventory-in-0:&#10;            consumer:&#10;              exchangeType: topic&#10;              bindingRoutingKey: &quot;order.inventory_updated.#&quot;&#10;          orderInProgress-out-0:&#10;            producer:&#10;              exchangeType: topic&#10;              routingKeyExpression: &quot;headers['routingKey'] ?: 'order.inventory_updated'&quot;&#10;          orderRejected-out-0:&#10;            producer:&#10;              exchangeType: topic&#10;              routingKeyExpression: &quot;headers['routingKey'] ?: 'order.inventory_rejected'&quot;&#10;" />
+              <option name="updatedContent" value="spring:&#10;  application:&#10;    name: inventory-service&#10;  rabbitmq:&#10;    host: localhost&#10;    port: 5672&#10;    username: user&#10;    password: pass&#10;  cloud:&#10;    function:&#10;      definition: reserveInventory   # nombre del bean Consumer&lt;...&gt;&#10;    stream:&#10;      bindings:&#10;        reserveInventory-in-0:&#10;          destination: marketplace.topic&#10;          group: inventory.reserve_order.queue&#10;          content-type: application/json&#10;        orderInProgress-out-0:&#10;          destination: marketplace.topic&#10;          content-type: application/json&#10;        orderRejected-out-0:&#10;          destination: marketplace.topic&#10;          content-type: application/json&#10;      rabbit:&#10;        bindings:&#10;          reserveInventory-in-0:&#10;            consumer:&#10;              exchangeType: topic&#10;              bindingRoutingKey: &quot;order.inventory_updated.#&quot;&#10;          orderInProgress-out-0:&#10;            producer:&#10;              exchangeType: topic&#10;              routingKeyExpression: &quot;headers['routingKey'] ?: 'order.inventory_updated'&quot;&#10;          orderRejected-out-0:&#10;            producer:&#10;              exchangeType: topic&#10;              routingKeyExpression: &quot;headers['routingKey'] ?: 'order.inventory_rejected'&quot;" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
