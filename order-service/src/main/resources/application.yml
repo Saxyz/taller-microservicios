@@ -6,7 +6,6 @@ spring:
     port: 5672
     username: user
     password: pass
-
   cloud:
     stream:
       bindings:
