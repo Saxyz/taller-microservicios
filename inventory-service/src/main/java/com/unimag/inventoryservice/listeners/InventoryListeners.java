@@ -1,6 +1,6 @@
 package com.unimag.inventoryservice.listeners;
 
-import com.unimag.shared.dtos.ReserveInventoryCommand;
+import com.unimag.shared.dtos.commands.ReserveInventoryCommand;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 

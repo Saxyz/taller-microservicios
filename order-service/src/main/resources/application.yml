@@ -12,3 +12,27 @@ spring:
         reserveOrder-out-0:
           destination: marketplace.topic
           content-type: application/json
+        # Binding de ENTRADA (Consumer) - recibe mensajes
+        processOrderConfirmation-in-0:
+          destination: order.confirmation.topic
+          content-type: application/json
+          group: order-service-group  # Importante para consumers
+
+        # Puedes tener múltiples bindings según necesites
+#        processInventoryResponse-in-0:
+#          destination: inventory.response.topic
+#          content-type: application/json
+#          group: order-service-group
+
+      # Configuración de RabbitMQ específica (opcional pero recomendada)
+      rabbit:
+        bindings:
+          processOrderConfirmation-in-0:
+            consumer:
+              durableSubscription: true
+              auto-bind-dlq: true  # Dead Letter Queue automática
+              republish-to-dlq: true
+          processInventoryResponse-in-0:
+            consumer:
+              durableSubscription: true
+              auto-bind-dlq: true

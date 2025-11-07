@@ -1,4 +1,4 @@
-package com.unimag.shared.dtos;
+package com.unimag.shared.dtos.commands;
 
 public record ReserveInventoryCommand(
         String orderId,

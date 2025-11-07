@@ -3,7 +3,7 @@ package com.unimag.orderservice.controllers;
 import com.unimag.orderservice.dtos.CreateOrderRequest;
 import com.unimag.orderservice.entities.Order;
 import com.unimag.orderservice.services.OrderService;
-import com.unimag.shared.dtos.ReserveInventoryCommand;
+import com.unimag.shared.dtos.commands.ReserveInventoryCommand;
 import org.springframework.cloud.stream.function.StreamBridge;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
