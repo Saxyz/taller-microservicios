@@ -5,4 +5,6 @@ import com.unimag.orderservice.entities.Order;
 
 public interface OrderService {
     Order createOrder(CreateOrderRequest createOrderRequest);
+    Order updateOrderStatusToPendingPayment(String orderId);
+    Order updateOrderStatusToRecjected(String orderId);
 }

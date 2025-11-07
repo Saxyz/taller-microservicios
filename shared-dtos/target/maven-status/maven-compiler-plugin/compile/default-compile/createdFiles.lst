@@ -1,1 +1,2 @@
-com\unimag\shared\dtos\ReserveInventoryCommand.class
+com\unimag\shared\dtos\events\InventoryReservedEvent.class
+com\unimag\shared\dtos\commands\ReserveInventoryCommand.class
