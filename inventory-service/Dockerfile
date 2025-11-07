@@ -8,8 +8,10 @@ WORKDIR /app
 
 # Copiar los archivos de Maven (pom.xml y código fuente)
 COPY pom.xml .
+COPY settings-github.xml ./secrets/settings-github.xml
 # Descargar dependencias antes de copiar todo (mejora cacheo)
-RUN mvn dependency:go-offline -B
+RUN mvn dependency:go-offline -s ./secrets/settings-github.xml
+
 
 # Ahora copiamos el código fuente
 COPY src ./src

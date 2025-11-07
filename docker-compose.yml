@@ -126,7 +126,7 @@ services:
       SPRING_JPA_DATABASE_PLATFORM: org.hibernate.dialect.PostgreSQLDialect
     networks:
       - app-net
-
 networks:
   app-net:
     driver: bridge
+
