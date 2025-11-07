@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: inventory-service
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: user
+    password: pass
+  cloud:
+    function:
+      definition: reserveInventory   # nombre del bean Consumer<...>
+    stream:
+      bindings:
+        reserve-in-0:
+          destination: marketplace.topic
+          group: inventory.reserve_order.queue
+          content-type: application/json
